@@ -1,0 +1,43 @@
+#game {
+	width: 800px;
+	position: relative;
+}
+
+#currentTime{
+	left: 10px;
+}
+
+#playGround {
+	background: rgb(176,195,204);
+	width: 600px;
+	height: 600px;
+	position: relative;
+	float: left;
+}
+
+#scoreBoard {
+	background-color: rgb(126,130,160);
+	color: white;
+	width: 200px;
+	height: 600px;
+	position: relative;
+	float: left;
+}
+
+
+#startSquare {
+	background-color: rgb(173,255,47);
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+.pickUpSquare{
+	background-color: rgb(76, 130, 153);
+	width: 25px;
+	height: 25px;
+	position: absolute;
+}

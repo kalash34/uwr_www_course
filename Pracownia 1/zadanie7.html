@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>pracownia1 - zadanie7</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<form>
+			Nr Konta:<br>
+			<input id="nrkonta"	type="text"	size="22" pattern="[0-9]{22}" maxlength="22" required /><br>
+			Imię:<br>
+			<input id="imie"	type="text" required /><br>
+			Nazwisko:<br>
+			<input id="nazw"	type="text" required /><br>
+			Nr Telefonu:<br>+48
+			<input id="nrtel"	type="tel"	size="9" pattern="[0-9]{9}" maxlength="9" required /><br>
+			Adres E-mail:<br>
+			<input id="e-mail"	type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required /><br>
+			Adres zamieszkania:<br>
+			<input id="aulica"	type="text" placeholder="ul." required />
+			<input id="amiasto"	type="text"	placeholder="miasto" required  />
+			<input id="abud"	type="text"	placeholder="nr budynku" pattern="[0-9]+[a-zA-Z]{0,1}" required />
+			<input id="amszk"	type="text"	placeholder="nr mieszkania" pattern="[0-9]"/><br>
+			Kod pocztowy:<br>
+			<input id="kod2"	type="text"	size="2" maxlength="2" pattern="[0-9]{2}" required />-
+			<input id="kod3"	type="text"	size="3" maxlength="3" pattern="[0-9]{3}" required /><br>
+			Miasto:<br>
+			<input id="miasto"	type="text" required /><br>
+			Kwota przelewu:<br>
+			<input id="kwota"	type="number"	min="0" required /><br>
+			Data przelewu: (nie dziala na firefoxie)<br>
+			<input id="data"	type="date" required /><br>
+			<input type="submit" value="Wyślij formularz">
+		</form>
+	</body>
+</html>

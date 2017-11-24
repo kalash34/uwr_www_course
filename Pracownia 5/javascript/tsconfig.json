@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "lib": ["es2015", "es2015.iterable", "dom"],
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "files": [
+        "zadanie_3.ts",
+    ]
+}

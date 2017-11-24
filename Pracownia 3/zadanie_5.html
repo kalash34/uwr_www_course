@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>pracownia3 - zadanie5</title>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			ul#dot {
+				list-style-image: url("dot.png");
+			}
+			
+			ul#dot2 {
+				list-style-type: none;
+			}
+			ul#dot2 > li::before {
+				content: url("dot.png")
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="dot">
+			<li>list item</li>
+			<li>list item</li>
+			<li>list item</li>
+		</ul>
+		<ul id="dot2">
+			<li>list item</li>
+			<li>list item</li>
+			<li>list item</li>
+		</ul>
+	</body>
+</html>

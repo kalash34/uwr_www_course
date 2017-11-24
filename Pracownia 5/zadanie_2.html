@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pracownia5 - zadanie2</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+    label, input { display:block; }
+    input.text { margin-bottom:12px; width:95%; padding: .4em; }
+    fieldset { padding:0; border:0; margin-top:25px; }
+    h1 { font-size: 1.2em; margin: .6em 0; }
+    div#users-contain { width: 350px; margin: 20px 0; }
+    div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+    div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+    .ui-dialog .ui-state-error { padding: .3em; }
+    .validateTips { border: 1px solid transparent; padding: 0.3em; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var dialog, form, confirm,
+      imie = $( "#imie" ),
+      nazwisko = $( "#nazwisko" ),
+      miasto = $( "#miasto" ),
+      kod = $( "#kod" ),
+      data = $( "#data" ),
+      allFields = $( [] ).add( imie ).add( nazwisko ).add( miasto ).add( kod ).add( data ),
+      tips = $( ".validateTips" );
+ 
+    function addUser() {
+      allFields.removeClass( "ui-state-error" );
+
+
+        $( "#users tbody" ).append( "<tr>" +
+          "<td>" + imie.val() + "</td>" +
+          "<td>" + nazwisko.val() + "</td>" +
+          "<td>" + miasto.val() + "</td>" +
+          "<td>" + kod.val() + "</td>" +
+          "<td>" + data.val() + "</td>" +
+          '<td><button class="delete">Usuń</button></td>' +
+        "</tr>" );
+        dialog.dialog( "close" );
+     
+     	refresh();
+
+      return true;
+    }
+ 
+    dialog = $( "#dialog-form" ).dialog({
+      autoOpen: false,
+      height: 500,
+      width: 450,
+      modal: true,
+      buttons: {
+        "Dodaj element": addUser,
+        Anuluj: function() {
+          dialog.dialog( "close" );
+        }
+      },
+      close: function() {
+        form[ 0 ].reset();
+        allFields.removeClass( "ui-state-error" );
+      }
+    });
+ 
+    form = dialog.find( "form" ).on( "submit", function( event ) {
+      event.preventDefault();
+      addUser();
+    });
+
+    confirm = $( "#dialog-confirm" ).dialog({
+      autoOpen: false,
+      resizable: false,
+      height: "auto",
+      width: 400,
+      modal: true,
+      buttons: {
+        "Tak": function() {
+          $( this ).dialog( "close" );
+          $(this).data("link").closest("tr").remove();
+        },
+        "Nie": function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+
+    $( "#data" ).datepicker({dateFormat: "dd-mm-yy"});
+
+
+
+    $( "#create-user" ).on( "click", function() {
+      dialog.dialog( "open" );
+    });
+
+
+    $( "#delete-user" ).on( "click", function() {
+      confirm.data("link", this).dialog( "open" );
+    });
+
+    $( "#users" ).on( "click", ".delete", function() {
+      confirm.data("link", this).dialog( "open" );
+    });
+
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="dialog-confirm" title="Czy usunąć element?">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Ten element zostanie usunięty. Jesteś pewny?</p>
+</div>
+
+<div id="dialog-form" title="Stwórz nowy element"> 
+  <form>
+    <fieldset>
+      <label for="imie">Imię</label>
+      <input type="text" name="imie" id="imie" value="Jan" class="text ui-widget-content ui-corner-all">
+      <label for="nazwisko">Nazwisko</label>
+      <input type="text" name="nazwisko" id="nazwisko" value="Kowalski" class="text ui-widget-content ui-corner-all">
+      <label for="miasto">Miasto</label>
+      <input type="text" name="miasto" id="miasto" value="Wrocław" class="text ui-widget-content ui-corner-all">
+      <label for="kod">Kod pocztowy</label>
+      <input type="text" name="kod" id="kod" value="xx-xxx" class="text ui-widget-content ui-corner-all">
+      <label for="data">Data urodzenia</label>
+      <input type="text" name="data" id="data" value="13-02-1997" class="text ui-widget-content ui-corner-all">
+ 
+      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </fieldset>
+  </form>
+</div>
+ 
+ 
+<div id="users-contain" class="ui-widget">
+  <table id="users" class="ui-widget ui-widget-content">
+    <thead>
+      <tr class="ui-widget-header ">
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Miasto</th>
+        <th>Kod pocztowy</th>
+        <th>Data urodzenia</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jan</td>
+        <td>Kowalski</td>
+        <td>Wrocław</td>
+        <td>xx-xxx</td>
+        <td>13-02-1997</td>
+        <td><button id="delete-user">Usuń</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button id="create-user">Dodaj element</button>
+ 
+ 
+</body>
+</html>

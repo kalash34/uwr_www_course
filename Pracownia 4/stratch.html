@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script>
+			var pickUps = document.getElementsByClassName("pickUp");
+
+			function pickUp(pick){
+				pick.style.background = "red";
+			}
+
+			function setup(){
+				for (let i = 0; i < pickUps.length; i++){
+					pickUps[i].onmouseover = function(){
+						pickUp(pickUps[i]);
+					}
+				}
+			}
+
+			window.onload = setup;
+		</script>
+		<style type="text/css">
+			.pickUp {
+				width: 100px;
+				height: 100px;
+				background: green;
+			}
+		</style>
+	</head>
+			<div class="pickUp"></div><br>
+			<div class="pickUp"></div>
+	</body>
+</html>

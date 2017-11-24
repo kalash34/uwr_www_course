@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>pracownia3 - zadanie6</title>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			div.przyklad {
+				width: 300px;
+				height: 150px;
+			}
+			div.przyklad2 {
+				width: 100px;
+				height: 100px;
+				float: left;
+				background: grey;
+			}
+			div.przyklad3 {
+				width: 100px;
+				height: 100px;
+				float: right;
+				background: grey;
+			}
+			div.left {
+				width: 50px;
+				height: 50px;
+				background: lightyellow;
+				float: left;
+			}
+			div.right {
+				width: 50px;
+				height: 50px;
+				background: lightgreen;
+				float: right;
+			}
+			div.none {
+				width: 50px;
+				height: 50px;
+				background: lightgrey;
+			}
+			p.cleft {
+				clear: left;
+			}
+			p.cright {
+				clear: right;
+			}
+			p.cboth {
+				clear: both;
+			}
+			p.cnone {
+				clear: none;
+			}
+		</style>
+	</head>
+	<body>
+		Przykład losowych floatów
+		<div class="przyklad">
+			<div class="left">L</div>
+			<div class="left">L</div>
+			<div class="right">R</div>
+			<div class="none">N</div>
+			<div class="right">R</div>
+			<div class="right">R</div>
+			<div class="left">L</div>
+		</div>
+
+		Przykład gdy bloczki się nie mieszczą
+		<div class="przyklad">
+			<div class="left">L</div>
+			<div class="left">L</div>
+			<div class="left">L</div>
+			<div class="left">L</div>
+			<div class="left">L</div>
+			<div class="left">L</div>
+			<div class="left">L</div>
+			<div class="left">L</div>
+		</div>
+
+		Przykład clear<br>
+		<div class="przyklad2"></div>
+		<p> clear: none</p>
+		<p class="cleft"> clear: left</p>
+		<p class="cright"> clear: right</p>
+		<div class="przyklad3"></div>
+		<p> clear: none</p>
+		<div class="przyklad2"></div>
+		<p class="cboth"> clear: both</p>
+		<div class="przyklad3"></div>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>pracownia3 - zadanie7</title>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			#example1 {
+				height: 100px;
+				display: flex;
+			}
+
+			#example1 div {
+				flex-basis: 80px;
+			}
+
+			#example2 {
+				height: 100px;
+				width: 320px;
+				display: flex;
+			}
+
+			#example2 div {
+				flex-grow: 1;
+			}
+
+			#example2 div:nth-of-type(3) {
+				flex-grow: 3;
+			}
+
+			#example3 {
+				height: 100px;
+				width: 320px;
+				display: flex;
+			}
+
+			#example3 div {
+				flex-basis: 100px;
+				flex-shrink: 1;
+			}
+
+			#example3 div:nth-of-type(3) {
+				flex-shrink: 3;
+			}
+		</style>
+	</head>
+	<body>
+		flex-basis
+		<div id="example1">
+			<div style="background: lightgreen"></div>
+			<div style="background: pink"></div>
+			<div style="background: lightblue"></div>
+			<div style="background: lightgrey"></div>
+		</div>
+		<br>
+		flex-grow
+		<div id="example2">
+			<div style="background: lightgreen"></div>
+			<div style="background: pink"></div>
+			<div style="background: lightblue"></div>
+			<div style="background: lightgrey"></div>
+		</div>
+		<br>
+		flex-shrink
+		<div id="example3">
+			<div style="background: lightgreen"></div>
+			<div style="background: pink"></div>
+			<div style="background: lightblue"></div>
+			<div style="background: lightgrey"></div>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>pracownia2 - zadanie3</title>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			ul > li {
+				color: blue;
+			}
+			li.adj + li {
+				color: green;
+			}
+			a {
+				text-decoration: none;
+			}
+			a[target] {
+				color: hotpink;
+			}
+			a[href="https://github.com/"] {
+				color: orange;
+			}
+			ol#linki {
+				color: red;
+			}
+			div p {
+				color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Przykład CHILD ></p>
+			<ul>
+				<li>1st ul item</li>
+				<li>2nd ul item</li>
+				<li>3rd ul item</li>
+			</ul>
+			<ol>
+				<li>1st ol item</li>
+				<li>2nd ol item</li>
+				<li>3rd ol item</li>
+			</ol>
+
+		<p>Przykład ADJACENT + oraz CLASS .</p>
+			<ol>
+				<li class="adj">Pierwszy z rodzeństwa</li>
+				<li class="adj">Drugi z rodzeństwa</li>
+				<li class="adj">Trzeci z rodzeństwa</li>
+			</ol>
+		<p>Przykład ATTRIBUTE [att~=] oraz ID #</p>
+			<ol id="linki"> 
+				<li><a href="https://pl.wikipedia.org">Wikipedia</a></li>
+				<li><a href="https://www.wolframalpha.com" target="_blank">WolframAlpha</a></li>
+				<li><a href="https://github.com/">Github</a></li>
+			</ol>
+		<p>Przykład DESCENDANT</p>
+			<div>
+				<p>p in div</p>
+				<p><span>span in p in div</span></p>
+			</div>
+			
+			<section>
+				<h2>nagłówek, bo trzeba</h2>
+				<p>p in section</p>
+				<p><span>span in p in section</span></p>
+			</section>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>pracownia2 - zadanie5</title>
+		<meta charset="UTF-8">
+		<style type="text/css">
+
+			div#drugi {
+				background: grey;
+			}
+
+			p:nth-child(4) {
+				color: orange;
+			}
+
+			p:nth-last-child(4){
+				color: cyan;
+			}
+			p:first-of-type {
+				color: red;
+			}
+			p:last-of-type {
+				color: blue;
+			}
+
+			p:only-of-type {
+				color: lightgreen;
+			}
+			:root {
+				color: purple;
+			}
+
+			h2:nth-of-type(2) {
+				color: lightblue;
+			}
+			h2:nth-last-of-type(3) {
+				color: hotpink;
+			}
+			h2:last-child{
+				color: white;
+			}
+
+			p:empty {
+				background: lightgreen;
+				width: 200px;
+				height: 20px;
+			}
+			
+			/*
+			:not(p) {
+				background: lightgrey;
+			}
+			*/
+
+			::selection {
+				color: red;
+				background: yellow;
+			}
+
+			::-moz-selection {
+				color: red;
+				background: yellow;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>Pierwszy paragraf</p>
+			<p>Drugi paragraf</p>
+			<p><span>Trzeci paragraf w spanie (korzeń)</span></p>
+			<p>Czwarty paragraf</p>
+			<p>Piąty paragraf</p>
+		</div>
+		<div id="drugi">
+			<p>Jedyny paragraf w divie</p>
+			<h2>Pierwszy nagłówek h2</h2>
+			<h2>Drugi nagłówek h2</h2>
+			<h2>Trzeci nagłówek h2</h2>
+		</div>
+		<p></p>
+
+	</body>
+</html>
